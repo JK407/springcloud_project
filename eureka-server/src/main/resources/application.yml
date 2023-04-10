@@ -1,0 +1,19 @@
+server:
+  port: 8500
+spring:
+  application:
+    name: eureka-server
+  security:
+    user:
+      password: 123456
+      name: root
+    basic :
+      enabled: true
+eureka:
+  client:
+    fetch-registry: false   #自己是注册中心，不用获取注册表
+    register-with-eureka: false #是否把自己也注册当服务
+    service-url:
+      defaultZone :  http://${eureka.instance.hostname}:${server.port}/eureka/
+  instance:
+    hostname: localhost

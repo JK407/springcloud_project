@@ -1,0 +1,22 @@
+server:
+  port: 8893
+spring:
+  application:
+    name: user-consumer
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/b2bdata?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&AllowPublicKeyRetrieval=True
+    username: root
+    password: root
+eureka:
+  client:
+    service-url:
+      defaultZone: http://root:123456@localhost:8500/eureka/
+  instance:
+    hostname: localhost
+thymeleaf:
+  cache: false
+  prefix: classpath:/template/
+feign:
+  hystrix:
+    enabled: true
